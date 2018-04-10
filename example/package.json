@@ -9,10 +9,8 @@
     "serve:dev": "PORT=8000 CONFIG_ENV=dev kaliber-serve",
     "lint": "kaliber-lint"
   },
-  "devDependencies": {
-    "@kaliber/build": "*"
-  },
   "dependencies": {
+    "@kaliber/build": "*",
     "express-basic-auth": "^1.1.4",
     "firebase": "^4.12.1",
     "firebase-admin": "^5.12.0",
