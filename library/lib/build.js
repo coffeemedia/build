@@ -26,6 +26,7 @@ const websocketCommunicationPlugin = require('../webpack-plugins/websocket-commu
 
 const absolutePathResolverPlugin = require('../webpack-resolver-plugins/absolute-path-resolver-plugin')
 const fragmentResolverPlugin = require('../webpack-resolver-plugins/fragment-resolver-plugin')
+const saferDependenciesPlugin = require('../webpack-resolver-plugins/safer-dependencies-plugin');
 
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const ExtendedAPIPlugin = require('webpack/lib/ExtendedAPIPlugin')
@@ -188,7 +189,7 @@ module.exports = function build({ watch }) {
     return {
       extensions: ['.js'],
       modules: ['node_modules'],
-      plugins: [absolutePathResolverPlugin(srcDir), fragmentResolverPlugin()]
+      plugins: [absolutePathResolverPlugin(srcDir), fragmentResolverPlugin(), saferDependenciesPlugin()]
     }
   }
 
